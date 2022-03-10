@@ -1,7 +1,7 @@
 import { By, WebDriver } from "selenium-webdriver"; 
 import {BasePage} from "./basePage" 
 
-export class TaylorMadePage {
+export class TaylorMadePage extends BasePage {
     driver: WebDriver
     url: string
     loginBtn: By=By.css('#header-login')
@@ -39,4 +39,7 @@ export class TaylorMadePage {
     emailInput3: By=By.xpath('//input[@class="needsclick go1889483518 kl-private-reset-css-Xuajs1"])[3]')
     subscribeBtn2: By=By.xpath('//button[@class="needsclick go332817621 kl-private-reset-css-Xuajs1"]')
 
+    constructor() {
+        super({url: 'https://www.taylormadegolf.com/home/?lang=en_US'})
+    }
 }
